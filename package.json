@@ -1,0 +1,19 @@
+{
+  "name": "live_project_manager-cli",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Valentin Orrit",
+  "license": "ISC",
+  "description": "This is a CLI app that uncompress .als files, extract the infos and put them in a json db.",
+  "dependencies": {
+    "commander": "^12.1.0",
+    "node-gzip": "^1.1.2"
+  },
+  "bin": {
+    "live-pm": "./index.js"
+  },
+  "type": "module"
+}
