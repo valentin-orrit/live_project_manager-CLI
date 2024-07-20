@@ -2,6 +2,7 @@ import * as fs from 'fs'
 import * as zlib from 'zlib'
 import { pipeline } from 'node:stream'
 import * as path from 'path'
+import chalk from 'chalk'
 
 // Get all .als files in a directory and its subdirectories
 function getAlsFiles(dir, fileList = []) {
@@ -29,6 +30,12 @@ if (!inputDir) {
 // Get all .als files in the directory and its subdirectories
 const alsFiles = getAlsFiles(inputDir)
 
+// Check if the directory is empty
+if (alsFiles.length === 0) {
+    console.error(chalk.red('No .als file found in the directory'))
+    process.exit(1)
+}
+
 // Process each .als file
 alsFiles.forEach(als => {
     const unzip = zlib.createUnzip()
@@ -41,9 +48,9 @@ alsFiles.forEach(als => {
 
     pipeline(input, unzip, output, (error) => {
         if (error) {
-            console.error('Pipeline failed for file', als, ':', error)
+            console.error(chalk.red('Unzip failed for file'), chalk.blue(als), ':', chalk.red(error))
         } else {
-            console.log('Pipeline succeeded for file', als, '. Output written to:', outputFilePath)
+            console.log(chalk.green('Unzip succeeded for file'), chalk.blue(als))
         }
     })
 })
