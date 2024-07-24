@@ -10,7 +10,8 @@
   "description": "This is a CLI app that uncompress .als files, extract the infos and put them in a json db.",
   "dependencies": {
     "chalk": "^5.3.0",
-    "commander": "^12.1.0"
+    "commander": "^12.1.0",
+    "fast-xml-parser": "^4.4.0"
   },
   "bin": {
     "live-pm": "./index.js"
