@@ -1,4 +1,4 @@
-import { uncompress } from './uncompress.js'
+import { uncompress } from './lib/uncompress.js'
 
 
 uncompress()
