@@ -9,14 +9,14 @@ import chalk from 'chalk'
 
 program
   .version("1.0.0")
-  .description("ALS File Processor CLI")
+  .description(".als File Processor CLI")
 
 program
   .command('process <directory>')
-  .description('Uncompress and parse ALS files in the specified directory')
+  .description('Uncompress and parse .als files in the specified directory')
   .action(async (directory) => {
     try {
-      console.log('Uncompressing...')
+      console.log('Processing .als files...')
       await uncompress(directory)
       console.log(chalk.green('Uncompression Completed'))
       console.log('Parsing...')
@@ -40,17 +40,5 @@ program
       console.error('XML deletion failed:', error.message)
     }
   })
-
-program
-.command('verify <directory>')
-.description('Verify if ALS files have been modified since last processing')
-.action(async (directory) => {
-  try {
-    await verifyFiles(directory)
-    console.log(chalk.green.bold('Verification completed successfully.'))
-  } catch (error) {
-    console.error('Verification failed:', error.message)
-  }
-})
 
 program.parse(process.argv)
