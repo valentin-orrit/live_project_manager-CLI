@@ -41,4 +41,16 @@ program
     }
   })
 
+program
+.command('verify <directory>')
+.description('Verify if ALS files have been modified since last processing')
+.action(async (directory) => {
+  try {
+    await verifyFiles(directory)
+    console.log(chalk.green.bold('Verification completed successfully.'))
+  } catch (error) {
+    console.error('Verification failed:', error.message)
+  }
+})
+
 program.parse(process.argv)
