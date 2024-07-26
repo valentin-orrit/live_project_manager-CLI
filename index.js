@@ -24,7 +24,7 @@ program
       console.log(chalk.green('Parsing Completed.'))
       console.log(chalk.green.bold('Processing completed successfully.'))
     } catch (error) {
-      await log(`An error occurred: ${error}`)
+      log(`An error occurred: ${error}`)
       console.error(chalk.red('Processing failed:'), error.message)
     }
   })
