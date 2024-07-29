@@ -22,6 +22,8 @@ program
       console.log('Parsing...')
       await parse(directory)
       console.log(chalk.green('Parsing Completed. Results saved to database.'))
+      // await xmlDelete(directory)
+      // console.log(chalk.green('XML deletion completed successfully.'))
       console.log(chalk.green.bold('Processing completed successfully.'))
     } catch (error) {
       log(`An error occurred: ${error}`)
