@@ -21,13 +21,13 @@ program
       console.log(chalk.green('Uncompression Completed'))
       console.log('Parsing...')
       await parse(directory)
-      console.log(chalk.green('Parsing Completed.'))
+      console.log(chalk.green('Parsing Completed. Results saved to database.'))
       console.log(chalk.green.bold('Processing completed successfully.'))
     } catch (error) {
       log(`An error occurred: ${error}`)
       console.error(chalk.red('Processing failed:'), error.message)
     }
-  })
+})
 
 program
   .command('delete <directory>')
