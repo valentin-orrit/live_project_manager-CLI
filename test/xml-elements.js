@@ -4,7 +4,7 @@ import { elements } from '../lib/xml-elements.js'
 const xmlFilePath = './test_files/test_04 Project/.test_04.xml'
 const result = elements(xmlFilePath) 
 
-describe('Elements extracted from xml files', function() {
+describe('elements', function() {
 
     describe('File Path validation', function() {
         it('Should be a .xml file', function() {
