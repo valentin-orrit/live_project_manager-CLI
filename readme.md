@@ -45,6 +45,7 @@ live-pm delete <directory>
 - fast-xml-parser: For parsing XML files
 - chalk: For colorful console output
 - mocha and chai: For tests
+- cli-progress : for progress bar
 
 <!-- ## Contributing
 
