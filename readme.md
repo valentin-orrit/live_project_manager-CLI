@@ -37,6 +37,7 @@ To delete XML files in a directory:
 ```bash
 live-pm delete <directory>
 ```
+The database and logs are written to the root directory of the app.
 
 ## Dependencies
 
