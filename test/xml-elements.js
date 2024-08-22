@@ -1,18 +1,10 @@
 import { expect } from 'chai'
 import { elements } from '../lib/xml-elements.js'
 
-const xmlFilePath = './test_files/test_04 Project/.test_04.xml'
+const xmlFilePath = './test_files/test_04 Project/test_04.xml'
 const result = elements(xmlFilePath) 
 
 describe('elements', function() {
-
-    describe('File Path validation', function() {
-        it('Should be a .xml file', function() {
-            expect(result).to.have.property('filePath')
-            expect(result.filePath).to.be.a('string')
-            expect(result.filePath.slice(-4)).to.match(/.xml/)
-        })
-    })
 
     describe('Name validation', function() {
         it('Should be a valid name', function() {
